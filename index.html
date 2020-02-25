@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    width: 170px;
+    border-radius: 5px;
+    border: 1px solid linen;
+    background:  white;
+}
+
+</style>
+<body>
+    <input type="text" id="text">
+    <script>
+        var properties = [
+            {
+                // Свойства HTML элемента(кнопки)
+                name: " я добавлю +",
+                add: "+",
+            },
+            {
+
+                name: " я добавлю -",
+                add: "-",
+            },
+            {
+
+                name: " я добавлю *",
+                add: "*",
+            },
+            {
+
+                name: " я добавлю /",
+                add: "/",
+            },
+            {
+
+                name: "0",
+                add: "0",
+            },
+             {
+
+                name: "1",
+                add: "1",
+            },
+             {
+
+                name: "2",
+                add: "2",
+            },
+            {
+
+                name: "3",
+                add: "3",
+            },
+             {
+
+                name: "4",
+                add: "4",
+            },
+             {
+
+                name: "5",
+                add: "5",
+            },
+             {
+
+                name: "6",
+                add: "6",
+            }, {
+
+                name: "7",
+                add: "7",
+            },
+             {
+
+                name: "8",
+                add: "8",
+            },
+             {
+
+                name: "9",
+                add: "9",
+            },
+            
+            // ...
+        ]
+
+        function createElements(array) {
+            for (let index = 0; index < array.length; index++) {
+                const property = array[index];
+                var btn = document.createElement('button');
+                btn.textContent = property.name;
+                document.body.append(btn);
+                btn.onclick = function add() {
+                    document.getElementById('text').value += property["add"];
+                }
+
+                // Создать HTML элемент(кнопку) на основе описанных данных(property)
+                // и вставить этот элемент в ваш HTML контейнер
+                // все должно работать как в изначальном ДЗ
+            }
+
+        }
+        createElements(properties)
+    </script>
+</body>
+
+</html>
